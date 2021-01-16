@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_aplication/components/row_card.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -8,12 +10,17 @@ class HomePage extends StatelessWidget {
           title: Text('Página Principal'),
           backgroundColor: Colors.deepPurpleAccent,
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        body: ListView(
+         padding: EdgeInsets.only(bottom: 500.0, top: 5.0, left: 5.0, right: 5.0),
+          scrollDirection: Axis.horizontal, 
           children: [
-            Text('Aqui va algo'),
-          ],
-        )
+          RowCard('Titulo1', 'Subtitulo1', Icons.ac_unit),
+          RowCard('Titulo2', 'Subtitulo2', Icons.access_alarms),
+          RowCard('Titulo3', 'Subtitulo3', Icons.accessible_forward),
+          RowCard('Titulo3', 'Subtitulo3', Icons.add_a_photo),
+        ]
+       )
+       
       );
   }
 }
